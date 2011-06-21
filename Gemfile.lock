@@ -54,7 +54,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.16)
-    mysql2 (0.3.6)
+    mysql2 (0.2.11)
     orm_adapter (0.0.5)
     polyglot (0.3.1)
     rack (1.2.3)
@@ -103,7 +103,7 @@ PLATFORMS
 
 DEPENDENCIES
   devise
-  mysql2
+  mysql2 (~> 0.2.0)
   oauth2-provider!
   rails (= 3.0.9)
   rspec-rails (~> 2.6.0)

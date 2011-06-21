@@ -1,11 +1,13 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.0.9'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'mysql2'
+gem 'mysql2', '~> 0.2.0'
+gem 'devise', '~> 1.3.0'
+gem 'oauth2-provider', :git => 'git://github.com/alphagov/oauth2-provider.git'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -26,6 +28,6 @@ gem 'mysql2'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+group :development, :test do
+  gem 'rspec-rails', '~> 2.6.0'
+end
