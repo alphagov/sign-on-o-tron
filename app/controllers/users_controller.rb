@@ -1,5 +1,6 @@
-class UserController < ApplicationController
+class UsersController < ApplicationController
   authenticate_with_oauth
+  
   
   def show
     respond_to do |wants|
