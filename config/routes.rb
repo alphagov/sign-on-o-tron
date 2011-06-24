@@ -1,5 +1,3 @@
-require 'extra_config'
-
 Halberd::Application.routes.draw do
   devise_for :users
 
