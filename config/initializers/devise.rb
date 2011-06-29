@@ -1,3 +1,4 @@
+require 'warden_oauth_provider_strategy'
 # Use this hook to configure devise mailer, warden hooks and so forth. The first
 # four configuration values can also be set straight in your models.
 Devise.setup do |config|
@@ -191,4 +192,8 @@ Devise.setup do |config|
   #   manager.intercept_401 = false
   #   manager.default_strategies(:scope => :user).unshift :some_external_strategy
   # end
+  config.warden do |manager|
+    manager.strategies.add(:oauth2, WardenOAuthProviderStrategy)
+    manager.default_strategies(:scope => :user).unshift :oauth2
+  end
 end
