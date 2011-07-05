@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110621091055) do
+ActiveRecord::Schema.define(:version => 20110705135928) do
 
   create_table "oauth_access_tokens", :force => true do |t|
     t.integer  "authorization_id", :null => false
@@ -62,6 +62,8 @@ ActiveRecord::Schema.define(:version => 20110621091055) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "uid",                                                   :null => false
+    t.integer  "version",                               :default => 1,  :null => false
   end
 
 end

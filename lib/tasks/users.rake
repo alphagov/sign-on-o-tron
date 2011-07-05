@@ -10,7 +10,8 @@ namespace :users do
       :github => (ENV['github'] || nil),
       :twitter => (ENV['twitter'] || nil),
       :password => "#{default_password}",
-      :password_confirmation => "#{default_password}"
+      :password_confirmation => "#{default_password}",
+      :uid => SecureRandom.urlsafe_base64
     }
 
     params = Hash[user_params.reject { |k, v| v.nil? }.collect { |k, v| [k, v.dup] }]
