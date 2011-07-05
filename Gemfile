@@ -29,5 +29,6 @@ gem 'oauth2-provider', :git => 'git://github.com/alphagov/oauth2-provider.git'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
+  gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'rspec-rails', '~> 2.6.0'
 end
