@@ -1,0 +1,18 @@
+<%= render :partial => 'shared/user_section' %>
+<%- unless current_user.authorisations.empty? %>
+  <section>
+    <h3>Authorised apps</h3>
+    <ul>
+    <%- current_user.authorisations.each do |authorisation| -%>
+      <li><%= authorisation.client.name %></li>
+    <%- end -%>
+    </ul>
+  </section>
+<%- end -%>
+<section>
+  <h3>Your account</h3>
+  <ul>
+    <li><%= link_to "Change your password", edit_user_password_path %></li>
+    <li><%= link_to "Sign out", destroy_user_session_path %></li>
+  </ul>
+</section>

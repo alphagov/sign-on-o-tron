@@ -1,0 +1,4 @@
+<section class="gravatar">
+  <h3>Hello, <%= current_user.name %></h3>
+  <p><%= image_tag(current_user.gravatar_url(:s => 128)) %></p>
+</section>

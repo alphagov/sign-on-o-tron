@@ -1,1 +1,1 @@
-<p><%= link_to 'Log in', new_user_session_path %></p>
+<%= render :partial => (current_user ? 'logged_in' : 'not_logged_in') %>
