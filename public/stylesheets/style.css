@@ -4,7 +4,7 @@
 }
 
 html {
-  background: #F3FFF9;
+  background: #f2efe6;
 }
 
 body {
@@ -15,13 +15,51 @@ body {
 }
 
 #halberd {
+	moz-border-radius-topleft: 8px;
+	-moz-border-radius-topright: 8px;
+	-moz-border-radius-bottomright: 0;
+	-moz-border-radius-bottomleft: 0;
+	-webkit-border-radius: 8px 8px 0 0;
   position: relative;
   left: -12em;
-  margin-top: 15%;
+  margin-top: 5%;
   margin-left: 50%;
-  padding: 1em;
-  width: 22em;
-  background: #C3EEC8;
+  width: 26em;
+  background: #d3d1c9;
+}
+
+section {
+	border-bottom: solid 3px #ccc;
+	margin-bottom: 1em;
+  padding: 0 1em;
+}
+
+ul {
+	margin: 1em 0;
+}
+
+li {
+	margin-left: 1em;
+}
+
+h2 {
+	background: #a6a69c;
+	border-radius: 8px 8px 0 0;
+	margin: 0 0 0.33em;
+  padding: 0.33em 0.7em;
+}
+
+.gravatar img {
+	border: solid 1px #ccc;
+	height: 150px;
+	margin-bottom: 1em;
+	width: 150px;
+}
+
+.gravatar h3 {
+	position: relative;
+	top: 3em;
+	left: 175px;
 }
 
 #sign-in {
