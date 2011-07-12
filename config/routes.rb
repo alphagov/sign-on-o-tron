@@ -4,7 +4,7 @@ Halberd::Application.routes.draw do
   match '/oauth/authorize', :via => :get, :to => 'authorisations#new'
   match '/oauth/authorize', :via => :post, :to => 'authorisations#create'
 
-  resource :user, :only => [:show]
+  resource :user, :except => [:destroy, :new]
 
   root :to => 'root#index'
 end

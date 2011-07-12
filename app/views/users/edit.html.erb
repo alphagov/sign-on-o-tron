@@ -1,0 +1,9 @@
+<%= render :partial => 'shared/user_section' %>
+<section>
+  <%= form_for current_user do |f| %>
+    <p>Change your password</p>
+    <p><label>Password <%= f.password_field :password %></label></p>
+    <p><label>Re-type password <%= f.password_field :password_confirmation %></label></p>
+    <p><%= f.submit "Change" %></p>
+  <% end %>
+</section>
