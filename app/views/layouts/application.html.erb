@@ -7,9 +7,37 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
-  <div id="halberd">
-    <h2>GDS</h2>
-    <%= yield %>
-  </div>
+
+    <div id="halberd">
+		  <h2>GDS</h2>
+  		<%- if current_user -%>
+  		  <section class="gravatar">
+    		  <h3>Hello <%= current_user.name %>.</h3>
+    		  <img src="" alt="">
+    		</section>
+    		<section>
+
+    		  <h3>Authorised GDS Applications</h3>
+    		  <ul>
+    		    <li><a href="#">Need-o-tron</a></li>
+    		    <li><a href="#">Guides</a></li>
+  		    </ul>
+
+  		  </section>
+  		  <section>
+
+    		  <h3>Meta</h3>
+    		  <ul>
+    		    <li><a href="#">Change password</a></li>
+    		    <li><a href="#">Change details</a></li>
+  		    </ul>
+
+        </section>
+  		<%- end -%>
+  		<section>
+  		  <%= yield %>
+  		</section>
+	</div>
+
 </body>
 </html>
