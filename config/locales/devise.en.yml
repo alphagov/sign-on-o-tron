@@ -45,6 +45,6 @@ en:
       confirmation_instructions:
         subject: 'Confirmation instructions'
       reset_password_instructions:
-        subject: 'Reset password instructions'
+        subject: 'Sign-on-o-tron: instructions for resetting your password'
       unlock_instructions:
-        subject: 'Unlock Instructions'
+        subject: 'Sign-on-o-tron: instructions for unlocking your account'
