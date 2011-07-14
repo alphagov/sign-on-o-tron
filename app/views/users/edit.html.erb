@@ -1,6 +1,13 @@
 <%= render :partial => 'shared/user_section' %>
 <section>
-  <%= form_for current_user do |f| %>
+  <%= form_for current_user, :url => user_path do |f| %>
+  <%- unless current_user.errors.empty? -%>
+    <ul class="errors">
+      <%- current_user.errors.full_messages.each do |msg| -%>
+      <li><%= msg %></li>
+      <%- end -%>
+    </ul>
+  <%- end -%>
     <p>Change your password</p>
     <p><label>Password <%= f.password_field :password %></label></p>
     <p><label>Re-type password <%= f.password_field :password_confirmation %></label></p>
