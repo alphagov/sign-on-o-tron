@@ -5,9 +5,11 @@ class AuthorisationsController < ApplicationController
   before_filter :block_invalid_authorization_code_requests
 
   def new
-    existing_authorisations = client.authorizations.where(:resource_owner => current_user, :scope => params['scope']).where('expires_at > ?', DateTime.now)
+    @client ||= OAuth2::Provider.client_class.from_param(params['client_id'])
+    existing_authorisations = OAuth2::Provider::Models::ActiveRecord::Authorization.allowing(@client, current_user, nil)
+
     if existing_authorisations.any?
-      throw_response Responses.redirect_with_code(existing_authorisations.first.code, redirect_uri)
+      grant_authorization_code(current_user)
     else
       @client = oauth2_authorization_request.client
     end
