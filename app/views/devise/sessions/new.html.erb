@@ -1,18 +1,20 @@
 <section>
-  <h3>Sign in</h3>
+  <h2>Sign in</h2>
 
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <fieldset>
     <p><%= f.label :email %><br />
-    <%= f.email_field :email %></p>
+    <%= f.email_field :email, :placeholder => "email@domain.com" %></p>
 
     <p><%= f.label :password %><br />
-    <%= f.password_field :password %></p>
+    <%= f.password_field :password, :placeholder => "password" %></p>
 
     <% if devise_mapping.rememberable? -%>
       <p><%= f.check_box :remember_me %> <%= f.label :remember_me %></p>
     <% end -%>
 
     <p><%= f.submit "Sign in" %></p>
+    </fieldset>
   <% end %>
 </section>
 <section>

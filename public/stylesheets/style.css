@@ -4,49 +4,67 @@
 }
 
 html {
-  background: #f2efe6;
+  background: #D4D2CC;
+	height: 100%;
 }
 
 body {
   position: relative;
   font-family: sans-serif;
   font-size: 100%;
-  color: #333;
+  color: #444;
 }
 
 #halberd {
-	moz-border-radius-topleft: 8px;
-	-moz-border-radius-topright: 8px;
-	-moz-border-radius-bottomright: 0;
-	-moz-border-radius-bottomleft: 0;
-	-webkit-border-radius: 8px 8px 0 0;
-  position: relative;
-  left: -12em;
-  margin-top: 5%;
+  background: #EFECE0;
+	border: 2px solid #bbb;
+	-webkit-border-radius: 0.5em;
+	-moz-border-radius: 0.5em;
+	border-radius: 0.5em;
+  left: -14em;
+  margin-top: 15%;
   margin-left: 50%;
-  width: 26em;
-  background: #d3d1c9;
+  position: relative;
+  width: 30em;
 }
 
 section {
-	border-bottom: solid 3px #ccc;
+	border-bottom: solid 2px #bbb;
 	margin-bottom: 1em;
-  padding: 0 1em;
+  padding: 0.25em 1em;
+}
+	section:last-child {
+		border-bottom: none;
+	}
+
+h1 {
+	border-bottom: 1px solid #bbb;
+	background: #bbb;
+	font-size: 1.5em;
+	margin: 0 0 0.33em;
+  padding: 0.33em 0.7em;
+}
+
+fieldset {
+	background: #F9F9F9;
+	border: 2px solid #bbb;
+	-webkit-border-radius: 0.5em;
+	-moz-border-radius: 0.5em;
+	border-radius: 0.5em;
+	margin: 1em 0;
+	padding: 0.5em 1em;
+}
+
+fieldset p {
+	margin-bottom: 0.5em;
 }
 
 ul {
-	margin: 1em 0;
+	margin: 0 0 1em;
 }
 
 li {
 	margin-left: 1em;
-}
-
-h2 {
-	background: #a6a69c;
-	border-radius: 8px 8px 0 0;
-	margin: 0 0 0.33em;
-  padding: 0.33em 0.7em;
 }
 
 .gravatar img {
@@ -63,7 +81,7 @@ h2 {
 	width: 11em;
 }
 
-#sign-in {
+/*#sign-in {
   margin-top: 0.5em;
   padding: 1em 0;
   border-top: solid 1px #333;
@@ -72,16 +90,25 @@ h2 {
 p#sign-in-link {
   margin-top: 1em;
   text-align: center;
+}*/
+
+a {
+    color: #2200C1;
 }
 
-p#sign-in-link a {
-  padding: 0.5em;
-  font-size: 1.5em;
-  font-weight: bold;
-  background: #fff;
+a:hover {
+    color: #1D97FF;
 }
 
-p#sign-in-link a:hover, p#sign-in-link a:focus {
-  color: #fff;
-  background: #333;
+a:visited {
+    color: #5800AE;
+}
+
+a:active {
+	color: #c11;
+}
+
+a[rel="external"] {
+	background: url(/images/external-link.png) 100% 0 no-repeat;
+	padding-right: 1.5em;
 }
