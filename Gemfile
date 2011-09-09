@@ -32,4 +32,7 @@ gem 'formtastic', '~> 1.2.4'
 group :development, :test do
   gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'rspec-rails', '~> 2.6.0'
+  gem 'simplecov'
+  gem 'simplecov-rcov'
+  gem 'ci_reporter'
 end

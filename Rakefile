@@ -3,5 +3,6 @@
 
 require File.expand_path('../config/application', __FILE__)
 require 'rake'
+require 'ci/reporter/rake/rspec' if Rails.env.development?
 
 Halberd::Application.load_tasks
