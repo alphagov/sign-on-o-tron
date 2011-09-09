@@ -123,6 +123,6 @@ DEPENDENCIES
   oauth2-provider!
   rails (= 3.0.9)
   rspec-rails (~> 2.6.0)
-  simplecov
+  simplecov (= 0.4.2)
   simplecov-rcov
   sqlite3-ruby
