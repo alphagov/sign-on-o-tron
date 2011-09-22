@@ -9,7 +9,7 @@ rake clients:create name=ClientName
 
 This will generate an ID and a Secret that can then be used in the app
 
-rake users:create NAME=Name EMAIL=name@email.com (github=username twitter=username)
+rake users:create name=Name email=name@email.com (github=username twitter=username)
 
 This will create the user and send them an email to set their password
 
