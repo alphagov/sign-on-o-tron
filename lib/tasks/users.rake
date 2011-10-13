@@ -3,7 +3,8 @@ namespace :users do
   task :create => :environment do
     require 'securerandom'
     raise "Requires name and email" unless ENV['name'] && ENV['email']
-    default_password = SecureRandom.urlsafe_base64
+    default_password = ENV['password'].to_s.strip
+    default_password = SecureRandom.urlsafe_base64 if default_password == ''
     user_params = {
       :name => ENV['name'],
       :email => ENV['email'],
@@ -15,8 +16,10 @@ namespace :users do
     }
 
     params = Hash[user_params.reject { |k, v| v.nil? }.collect { |k, v| [k, v.dup] }]
-    user = User.create(params)
+    user = User.create!(params)
     user.send_reset_password_instructions
-    puts "User created: user.name <#{user.email}>"
+    puts "User created: user.name <#{user.name}>"
+    puts "              user.email <#{user.email}>"
+    puts "              user.password <#{default_password}>" if ENV['password']
   end
 end
