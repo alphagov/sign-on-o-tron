@@ -12,7 +12,7 @@ gem 'rails', '~> 3.1.1'
 
 gem 'mysql2', '~> 0.3.0'
 gem 'devise', '~> 1.3.0'
-gem 'oauth2-provider'
+gem 'oauth2-provider', :git => 'git://github.com/freerange/oauth2-provider.git'
 gem 'formtastic', '~> 1.2.4'
 
 # Use unicorn as the web server
