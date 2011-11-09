@@ -47,5 +47,5 @@ Halberd::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => 'signonotron.production.alphagov.co.uk' }
+  config.action_mailer.default_url_options = { :host => "signonotron.#{ENV['FACTER_govuk_platform']}.alphagov.co.uk" }
 end
