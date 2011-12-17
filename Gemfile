@@ -5,7 +5,7 @@ group :passenger_compatibility do
   gem 'rake', '0.9.2'
 end
 
-gem 'rails', '~> 3.1.1'
+gem 'rails', '~> 3.1.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
