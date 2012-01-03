@@ -6,6 +6,7 @@ group :passenger_compatibility do
 end
 
 gem 'rails', '~> 3.1.3'
+gem 'plek'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
