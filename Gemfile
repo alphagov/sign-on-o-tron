@@ -15,6 +15,7 @@ gem 'devise', '~> 1.3.0'
 gem 'oauth2-provider', :git => 'git://github.com/alphagov/oauth2-provider.git'
 gem 'formtastic', '~> 1.2.4'
 gem 'aws-ses', :require => 'aws/ses'
+gem 'exception_notification'
 
 # Use unicorn as the web server
 # gem 'unicorn'

@@ -54,6 +54,8 @@ GEM
       warden (~> 1.0.3)
     diff-lcs (1.1.3)
     erubis (2.7.0)
+    exception_notification (2.5.2)
+      actionmailer (>= 3.0.4)
     formtastic (1.2.4)
       actionpack (>= 2.3.7)
       activesupport (>= 2.3.7)
@@ -139,6 +141,7 @@ DEPENDENCIES
   aws-ses
   ci_reporter
   devise (~> 1.3.0)
+  exception_notification
   formtastic (~> 1.2.4)
   mysql2 (~> 0.3.0)
   oauth2-provider!
