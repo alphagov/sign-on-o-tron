@@ -48,7 +48,8 @@ Signonotron::Application.configure do
   config.active_support.deprecation = :notify
 
   config.action_mailer.default_url_options = {
-    :host => URI.parse(Plek.current.find('signonotron')).host
+    app_name = Rails.application.class.to_s.split('::').first
+    :host => URI.parse(Plek.current.find(app_name.downcase)).host
   }
   config.action_mailer.delivery_method = :ses
 end
