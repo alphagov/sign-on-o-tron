@@ -47,6 +47,8 @@ Halberd::Application.configure do
   # Send deprecation notices to registered listeners
   config.active_support.deprecation = :notify
 
-  config.action_mailer.default_url_options = { :host => Plek.current.find('signonotron') }
+  config.action_mailer.default_url_options = {
+    :host => URI.parse(Plek.current.find('signonotron')).host
+  }
   config.action_mailer.delivery_method = :ses
 end
