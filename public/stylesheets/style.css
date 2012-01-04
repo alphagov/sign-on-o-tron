@@ -112,3 +112,9 @@ a[rel="external"] {
 	background: url(/images/external-link.png) 100% 0 no-repeat;
 	padding-right: 1.5em;
 }
+
+.error {
+	color: red;
+	font-weight: bold;
+	text-align: center;
+}

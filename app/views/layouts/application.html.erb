@@ -9,6 +9,10 @@
 
     <div id="signonotron">
 		  <h1>GDS Sign On</h1>
+		  <% if flash[:alert].present? %>
+		  <p class="error"><%= flash[:alert] %></p>
+		  <% end %>
+
 		  <%= yield %>
 	</div>
 
