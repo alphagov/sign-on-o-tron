@@ -1,4 +1,4 @@
-Halberd::Application.routes.draw do
+Signonotron::Application.routes.draw do
   devise_for :users
 
   match '/oauth/authorize', :via => :get, :to => 'authorisations#new'
