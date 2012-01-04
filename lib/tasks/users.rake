@@ -1,8 +1,8 @@
 namespace :users do
-  desc "Create a new user"
+  desc "Create a new user (specify name, email and optional password in environment)"
   task :create => :environment do
     require 'securerandom'
-    raise "Requires name and email" unless ENV['name'] && ENV['email']
+    raise "Requires name and email specified in environment" unless ENV['name'] && ENV['email']
     default_password = ENV['password'].to_s.strip
     default_password = SecureRandom.urlsafe_base64 if default_password == ''
     user_params = {
