@@ -2,7 +2,7 @@
 
 Signonotron::Application.config.session_store :cookie_store,
   key: '_signonotron_session',
-  secure: true
+  secure: Rails.env.production?
 
 # Use the database for sessions instead of the cookie-based default,
 # which shouldn't be used to store highly confidential information
