@@ -3,16 +3,10 @@ class AuthorisationsController < ApplicationController
 
   before_filter :authenticate_user!
   before_filter :block_invalid_authorization_code_requests
+  before_filter :regrant_existing_authorization
 
   def new
-    @client ||= OAuth2::Provider.client_class.from_param(params['client_id'])
-    existing_authorisations = OAuth2::Provider::Models::ActiveRecord::Authorization.allowing(@client, current_user, nil)
-
-    if existing_authorisations.any?
-      grant_authorization_code(current_user)
-    else
-      @client = oauth2_authorization_request.client
-    end
+    @client = oauth2_authorization_request.client
   end
 
   def create
@@ -21,5 +15,11 @@ class AuthorisationsController < ApplicationController
     else
       deny_authorization_code
     end
+  end
+
+  private
+
+  def regrant_existing_authorization
+    oauth2_authorization_request.grant_existing! current_user
   end
 end
