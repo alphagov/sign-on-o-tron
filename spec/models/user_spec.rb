@@ -24,4 +24,28 @@ describe User do
       end
     end
   end
+
+  describe "password validation" do
+    it "requires a password to be at least 10 characters long" do
+      nine_character_string = 'i am9cha^'
+      u = User.new(password: nine_character_string)
+      u.should_not be_valid
+      u.errors[:password].should_not be_empty
+    end
+
+    it "allows passwords of 128 characters with spaces in" do
+      long_string = "AM a r3gul4t!0^ pa$$w0r()" * 5
+      u = User.new(password: long_string)
+      u.valid?
+      u.errors[:password].should be_empty
+    end
+
+    it "rejects passwords that are purely alphanumeric" do
+      alphanumeric_string = 'abcde12345fg'
+      u = User.new(password: alphanumeric_string)
+      u.should_not be_valid
+      u.errors[:password].should_not be_empty
+      u.errors.full_messages.should include('Password must contain symbols other than numbers and letters')
+    end
+  end
 end

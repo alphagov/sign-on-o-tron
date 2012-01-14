@@ -3,12 +3,18 @@ require 'rack/utils'
 require "digest"
 
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :recoverable, :rememberable, :trackable, :validatable, :timeoutable
+  devise :database_authenticatable, :recoverable, :rememberable, :trackable,
+    :validatable, :timeoutable
   
-  attr_accessible :uid, :name, :email, :password, :password_confirmation, :twitter, :github, :beard
-  attr_readonly   :uid
+  attr_accessible :uid, :name, :email, :password, :password_confirmation,
+    :twitter, :github, :beard
+  attr_readonly :uid
 
-  has_many :authorisations, :as => :resource_owner, :class_name => "OAuth2::Provider::Models::ActiveRecord::Authorization"
+  has_many :authorisations, as: :resource_owner,
+    class_name: "OAuth2::Provider::Models::ActiveRecord::Authorization"
+
+  validates_format_of :password, with: /[!@#\$%^&*?_~-].*?[!@#\$%^&*?_~-]/,
+    message: 'must contain symbols other than numbers and letters'
 
   def gravatar_url(opts = {})
     opts.symbolize_keys!
