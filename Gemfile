@@ -19,9 +19,15 @@ gem 'exception_notification'
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
 group :development, :test do
-  gem 'sqlite3-ruby', :require => 'sqlite3'
   gem 'rspec-rails', '~> 2.6.0'
+  gem 'sqlite3-ruby', :require => 'sqlite3'
+ end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'cucumber-rails'
   gem 'simplecov', '0.4.2'
   gem 'simplecov-rcov'
   gem 'ci_reporter'
+  gem 'launchy'
 end
