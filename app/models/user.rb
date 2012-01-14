@@ -3,7 +3,7 @@ require 'rack/utils'
 require "digest"
 
 class User < ActiveRecord::Base
-  devise :database_authenticatable, :recoverable, :rememberable, :trackable,
+  devise :database_authenticatable, :recoverable, :trackable,
     :validatable, :timeoutable
   
   attr_accessible :uid, :name, :email, :password, :password_confirmation,
