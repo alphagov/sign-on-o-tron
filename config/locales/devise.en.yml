@@ -43,8 +43,8 @@ en:
       failure: 'Could not authorize you from %{kind} because "%{reason}".'
     mailer:
       confirmation_instructions:
-        subject: 'Confirmation instructions'
+        subject: 'Gov.UK Sign-on-o-tron: Confirmation instructions'
       reset_password_instructions:
-        subject: 'Sign-on-o-tron: instructions for resetting your password'
+        subject: 'Gov.UK Sign-on-o-tron: instructions for resetting your password'
       unlock_instructions:
-        subject: 'Sign-on-o-tron: instructions for unlocking your account'
+        subject: 'Gov.UK Sign-on-o-tron: instructions for unlocking your account'
