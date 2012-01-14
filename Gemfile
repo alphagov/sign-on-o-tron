@@ -9,7 +9,7 @@ gem 'rails', '~> 3.1.3'
 gem 'plek'
 
 gem 'mysql2', '~> 0.3.0'
-gem 'devise', '~> 1.3.0'
+gem 'devise', '~> 1.5.3'
 gem 'oauth2-provider', :git => 'git://github.com/alphagov/oauth2-provider.git'
 gem 'formtastic', '~> 1.2.4'
 gem 'aws-ses', :require => 'aws/ses'
