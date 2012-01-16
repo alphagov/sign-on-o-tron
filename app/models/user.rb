@@ -14,7 +14,8 @@ class User < ActiveRecord::Base
     class_name: "OAuth2::Provider::Models::ActiveRecord::Authorization"
 
   validates_format_of :password, with: /[!@#\$%^&*?_~-].*?[!@#\$%^&*?_~-]/,
-    message: 'must contain symbols other than numbers and letters'
+    message: 'must contain at least two symbols other than numbers and letters',
+    if: :password_required?
 
   def gravatar_url(opts = {})
     opts.symbolize_keys!
@@ -39,4 +40,6 @@ class User < ActiveRecord::Base
 
     recoverable
   end
+
+  include Suspendable
 end

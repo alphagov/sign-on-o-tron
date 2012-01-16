@@ -22,4 +22,22 @@ namespace :users do
     puts "              user.email <#{user.email}>"
     puts "              user.password <#{default_password}>" if ENV['password']
   end
+
+  desc "Suspend a user's access to the site (specify email in environment)"
+  task :suspend => :environment do
+    raise "Requires email specified in environment" unless ENV['email']
+    user = User.find_by_email(ENV['email'])
+    raise "Couldn't find user" unless user
+    user.suspend!
+    puts "User account suspended"
+  end
+
+  desc "Unsuspend a user's access to the site (specify email in environment)"
+  task :unsuspend => :environment do
+    raise "Requires email specified in environment" unless ENV['email']
+    user = User.find_by_email(ENV['email'])
+    raise "Couldn't find user" unless user
+    user.unsuspend!
+    puts "User account unsuspended"
+  end
 end

@@ -3,7 +3,7 @@ Given /^a user exists with email "([^"]*)" and password "([^"]*)"$/ do |email, p
 end
 
 Given /^"([^"]*)" is a suspended account$/ do |email|
-  User.find_by_email(email).update_attribute(:suspended_at, 1.week.ago)
+  User.find_by_email(email).suspend!
 end
 
 When /^I try to sign in with email "([^"]*)" and password "([^"]*)"$/ do |email, password|
