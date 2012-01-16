@@ -1,5 +1,5 @@
 Signonotron::Application.routes.draw do
-  devise_for :users
+  devise_for :users, controllers: { passwords: 'passwords' }
 
   match '/oauth/authorize', :via => :get, :to => 'authorisations#new'
   match '/oauth/authorize', :via => :post, :to => 'authorisations#create'

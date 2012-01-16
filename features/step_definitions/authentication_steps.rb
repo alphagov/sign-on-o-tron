@@ -22,3 +22,17 @@ end
 Then /^I should see "([^"]*)"$/ do |content|
   assert page.has_content?(content)
 end
+
+Given /^no user exists with email "([^"]*)"$/ do |email|
+  assert ! User.find_by_email(email)
+end
+
+When /^I request a new password for "([^"]*)"$/ do |email|
+  visit new_user_password_path
+  fill_in "Email", with: email
+  click_button "Send me reset password instructions"
+end
+
+Then /^I should not see "([^"]*)"$/ do |content|
+  assert ! page.has_content?(content)
+end

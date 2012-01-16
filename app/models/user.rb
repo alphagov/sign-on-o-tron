@@ -5,7 +5,7 @@ require "digest"
 class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :trackable,
     :validatable, :timeoutable, :lockable
-  
+
   attr_accessible :uid, :name, :email, :password, :password_confirmation,
     :twitter, :github, :beard
   attr_readonly :uid
@@ -26,5 +26,17 @@ class User < ActiveRecord::Base
 
   def to_sensible_json
     to_json(:only => [:uid, :version, :name, :email, :github, :twitter])
+  end
+
+  def self.send_reset_password_instructions(attributes = {})
+    recoverable = find_or_initialize_with_errors(reset_password_keys, attributes, :not_found)
+
+    if recoverable.persisted?
+      recoverable.send_reset_password_instructions
+    else
+      recoverable.errors.clear
+    end
+
+    recoverable
   end
 end
