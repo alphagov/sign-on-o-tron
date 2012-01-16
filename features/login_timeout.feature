@@ -1,5 +1,4 @@
 Feature: Restrictions around login
-
   Scenario: Locking accounts after many failed login attempts
     Given a user exists with email "email@example.com" and password "some password with various $ymb0l$"
     When I try to sign in 7 times with email "email@example.com" and password "notreally"
