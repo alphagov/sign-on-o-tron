@@ -8,6 +8,7 @@ end
 gem 'rails', '~> 3.1.3'
 gem 'plek'
 
+gem 'gds-warmup-controller'
 gem 'mysql2', '~> 0.3.0'
 gem 'devise', '~> 1.5.3'
 gem 'oauth2-provider', :git => 'git://github.com/alphagov/oauth2-provider.git'
