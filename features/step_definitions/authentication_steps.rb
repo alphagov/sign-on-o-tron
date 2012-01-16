@@ -2,6 +2,10 @@ Given /^a user exists with email "([^"]*)" and password "([^"]*)"$/ do |email, p
   User.create!(name: email, email: email, password: password, password_confirmation: password)
 end
 
+Given /^"([^"]*)" is a suspended account$/ do |email|
+  User.find_by_email(email).update_attribute(:suspended_at, 1.week.ago)
+end
+
 When /^I try to sign in with email "([^"]*)" and password "([^"]*)"$/ do |email, password|
   visit new_user_session_path
   fill_in "Email", with: email

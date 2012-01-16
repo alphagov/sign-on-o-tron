@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120113163707) do
+ActiveRecord::Schema.define(:version => 20120116135555) do
 
   create_table "oauth_access_tokens", :force => true do |t|
     t.integer  "authorization_id", :null => false
@@ -67,6 +67,7 @@ ActiveRecord::Schema.define(:version => 20120113163707) do
     t.integer  "version",                               :default => 1,  :null => false
     t.integer  "failed_attempts",                       :default => 0
     t.datetime "locked_at"
+    t.datetime "suspended_at"
   end
 
 end
