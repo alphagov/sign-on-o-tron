@@ -7,7 +7,7 @@ describe AuthorisationsController do
     end
 
     let :user do
-      User.create! name: 'Tom', email: 'tom@popdog.net', password: '!secret123!', uid: 'sommut'
+      User.create! name: 'Tom', email: 'tom@popdog.net', password: 'Sufficiently complex passphrase!', uid: 'sommut'
     end
 
     let :valid_params do
