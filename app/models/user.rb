@@ -13,9 +13,17 @@ class User < ActiveRecord::Base
   has_many :authorisations, as: :resource_owner,
     class_name: "OAuth2::Provider::Models::ActiveRecord::Authorization"
 
-  validates_format_of :password, with: /[!@#\$%^&*?_~-].*?[!@#\$%^&*?_~-]/,
-    message: 'must contain at least two symbols other than numbers and letters',
-    if: :password_required?
+  validate :strong_enough_password?, if: :password_required?
+
+  def self.passphrase_entropy
+    @passphrase_entropy ||= PassphraseEntropy.new
+  end
+
+  def strong_enough_password?
+    unless self.class.passphrase_entropy.entropy(password) >= 20
+      errors.add :password, "is not strong enough. Try adding symbols other than letters and numbers, or making it longer. You can use spaces"
+    end
+  end
 
   def gravatar_url(opts = {})
     opts.symbolize_keys!

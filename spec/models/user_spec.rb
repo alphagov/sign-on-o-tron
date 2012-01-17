@@ -45,7 +45,7 @@ describe User do
       u = User.new(password: alphanumeric_string)
       u.should_not be_valid
       u.errors[:password].should_not be_empty
-      u.errors.full_messages.should include('Password must contain at least two symbols other than numbers and letters')
+      u.errors[:password].join.should match(/not strong enough/)
     end
   end
 end
