@@ -9,6 +9,7 @@
     </ul>
   <%- end -%>
     <p>Change your passphrase</p>
+    <p><%= t("helpers.label.user.password_guidance") %></p>
     <p><label>Passphrase <%= f.password_field :password %></label></p>
     <p><label>Confirm passphrase <%= f.password_field :password_confirmation %></label></p>
     <p><%= f.submit "Change" %></p>
