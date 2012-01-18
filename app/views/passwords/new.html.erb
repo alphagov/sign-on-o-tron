@@ -1,12 +1,12 @@
 <section>
-  <h3>Forgot your password?</h3>
+  <h3>Forgot your passphrase?</h3>
   <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
     <%= devise_error_messages! %>
 
     <p><%= f.label :email %><br />
     <%= f.email_field :email %></p>
 
-    <p><%= f.submit "Send me reset password instructions" %></p>
+    <p><%= f.submit "Send me passphrase reset instructions" %></p>
   <% end %>
 </section>
 <section>

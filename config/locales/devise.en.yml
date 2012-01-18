@@ -17,7 +17,7 @@ en:
       unauthenticated: 'You need to sign in or sign up before continuing.'
       unconfirmed: 'You have to confirm your account before continuing.'
       locked: "Too many failed login attempts. Please wait an hour and try again or contact an admin."
-      invalid: 'Invalid email or password.'
+      invalid: 'Invalid email or passphrase.'
       invalid_token: 'Invalid authentication token.'
       timeout: 'Your session expired, please sign in again to continue.'
       inactive: 'Your account was not activated yet.'
@@ -25,8 +25,8 @@ en:
       signed_in: 'Signed in successfully.'
       signed_out: 'Signed out successfully.'
     passwords:
-      send_instructions: 'You will receive an email with instructions about how to reset your password in a few minutes.'
-      updated: 'Your password was changed successfully. You are now signed in.'
+      send_instructions: 'You will receive an email with instructions about how to reset your passphrase in a few minutes.'
+      updated: 'Your passphrase was changed successfully. You are now signed in.'
     confirmations:
       send_instructions: 'You will receive an email with instructions about how to confirm your account in a few minutes.'
       confirmed: 'Your account was successfully confirmed. You are now signed in.'
@@ -45,6 +45,6 @@ en:
       confirmation_instructions:
         subject: 'Gov.UK Sign-on-o-tron: Confirmation instructions'
       reset_password_instructions:
-        subject: 'Gov.UK Sign-on-o-tron: instructions for resetting your password'
+        subject: 'Gov.UK Sign-on-o-tron: instructions for resetting your passphrase'
       unlock_instructions:
         subject: 'Gov.UK Sign-on-o-tron: instructions for unlocking your account'

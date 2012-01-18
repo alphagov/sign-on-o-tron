@@ -2,4 +2,12 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  helpers:
+    label:
+      user:
+        password_confirmation: "Confirm passphrase"
+  activerecord:
+    attributes:
+      user:
+        password: "Passphrase"
+        password_confirmation: "Passphrase confirmation"
