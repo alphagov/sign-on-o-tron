@@ -118,3 +118,8 @@ a[rel="external"] {
 	font-weight: bold;
 	text-align: center;
 }
+div.hint {
+  margin: 1em 0px;
+  color: #666;
+  font-style: italic;
+}
