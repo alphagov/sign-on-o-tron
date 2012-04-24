@@ -1,6 +1,6 @@
 GIT
   remote: git://github.com/alphagov/oauth2-provider.git
-  revision: 0a737a859cade7c3bc28703cb0d5118dbdb7993d
+  revision: bf67227b13b19d8a156a92b11cd70eef42aa9a01
   specs:
     oauth2-provider (0.0.18)
       activesupport (~> 3.0)
@@ -37,7 +37,7 @@ GEM
       activesupport (= 3.1.3)
     activesupport (3.1.3)
       multi_json (~> 1.0)
-    addressable (2.2.6)
+    addressable (2.2.7)
     arel (2.2.1)
     aws-ses (0.4.4)
       builder
