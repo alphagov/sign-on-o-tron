@@ -1,3 +1,6 @@
+This project is no longer under active development. You are probably looking for [Signonotron2](https://github.com/alphagov/signonotron2).
+
+
 Sign-on-o-tron
 ==============
 
